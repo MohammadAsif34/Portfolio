@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+.mulish-1 {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Futuristic selection + scrollbar (optional) */
+/* ::selection {
+  background: #00f5d4;
+  color: #0a0f1c;
+} */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.scroll-none::-webkit-scrollbar {
+  display: none;
+}
