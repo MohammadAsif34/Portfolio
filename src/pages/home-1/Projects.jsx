@@ -104,7 +104,7 @@ const Projects = () => {
                     <Link className="mx-4 px-4 py-1 whitespace-nowrap text-neutral-500 border rounded-lg hover:text-purple-500 ">
                       Details
                     </Link>
-                    <Link className="mx-4 px-4 py-1 text-neutral-500  rounded-lg hover:text-purple-500 ">
+                    <Link className="mx-4 px-4 py-1 text-neutral-500 hidden md:block  rounded-lg hover:text-purple-500 ">
                       <i className="bi bi-github text-2xl "></i>
                     </Link>
                     <Link className="mx-4 px-4 py-1 text-blue-500 border rounded-lg ">
