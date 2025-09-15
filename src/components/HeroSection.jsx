@@ -55,6 +55,9 @@ const HeroSection = () => {
                 src="/person.png"
                 alt="person"
                 className="bg-transparent max-w-md-lg  drop-shadow-2xl drop-shadow-purple-500 rounded-full b lur-[1px]"
+                decoding="async"
+                fetchPriority="high"
+                loading="eager"
               />
             </div>
           </div>

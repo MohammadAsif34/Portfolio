@@ -9,6 +9,16 @@ const AboutUs = () => {
           About Us
         </h1>
         <div className="md:flex max: ">
+          <div className="flex-1/3  flex justify-center items-center">
+            <img
+              src="/person.png"
+              alt="person"
+              className="w-60 aspect-square rounded-fullobject-cover  -translate-y-10 drop-shadow-[25px_50px_50px] drop-shadow-purple-500"
+              decoding="async"
+              fetchPriority="high"
+              loading="eager"
+            />
+          </div>
           <p className="flex-2/3 px-10 text-justify font-thin indent-5">
             {about}
             <div className="text-end">
@@ -17,7 +27,6 @@ const AboutUs = () => {
               </button>
             </div>
           </p>
-          <div className="flex-1/3"></div>
         </div>
       </div>
     </>

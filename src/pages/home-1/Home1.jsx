@@ -8,10 +8,10 @@ import Projects from "./Projects";
 const Home1 = () => {
   return (
     <>
-      <main className="mulish-1 relative ">
+      <main className="mulish-1 relative custom-scroll ">
         <div className="absolute inset-0 bg-[url(./bg-main.svg)] bg-fixed bg-center opacity-5"></div>
         <HeroSection />
-        <div className="px-[8%] relative z-10 scroll-mt-10">
+        <div className="px-[8%] relative z-10 scroll-mt-10 custom-scroll">
           <AboutUs />
           <Projects />
           <ContactUs />

@@ -21,3 +21,23 @@ body,
 .scroll-none::-webkit-scrollbar {
   display: none;
 }
+/* Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-purple-500/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-purple-500/70 transition-all duration-300 cursor-pointer scale-101;
+}
+
+/* Firefox */
+* {
+  /* scrollbar-width: thin; auto | thin | none */
+  /* scrollbar-color: wheat transparent; thumb | track */
+}
