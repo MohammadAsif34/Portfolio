@@ -37,7 +37,25 @@ body,
 }
 
 /* Firefox */
-* {
-  /* scrollbar-width: thin; auto | thin | none */
-  /* scrollbar-color: wheat transparent; thumb | track */
+/* * { */
+/* scrollbar-width: thin; auto | thin | none */
+/* scrollbar-color: wheat transparent; thumb | track */
+/* } */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.25s ease-out;
+}
+
+.padding {
+  @apply px-4 md:px-14 lg:px-20  xl:px-[10%];
 }
