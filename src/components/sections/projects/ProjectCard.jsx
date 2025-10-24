@@ -7,7 +7,7 @@ const ProjectCard = ({ project }) => {
       <div className="b g-white dark: bg-gray-900 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-transform duration-300 hover:-translate-y-1 group">
         <div className="relative">
           <img
-            src={"/default_project.png"}
+            src={"/default_image/default_project.png"}
             // alt={title}
             className="w-full h-40 object-cover"
           />

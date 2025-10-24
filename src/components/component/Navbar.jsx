@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
-import { Code, Code2, Download } from "lucide-react";
+import { Download } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import Button from "./Button";
+import CertificateView from "../modal/CertificateView";
 import { navlink } from "../../data/my_dataset";
 
 export default function Navbar() {
   const [isNav, setIsNav] = useState(false);
+  const [open, setOpen] = useState(null);
+
   const [menu, setMenu] = useState(false);
 
   useEffect(() => {
@@ -64,8 +66,11 @@ export default function Navbar() {
             ))}
             {/* <Button title="Download CV" className="py-1!" /> */}
           </ul>
-          <div>
-            <button className="flex  items-center px-3 bg-indigo-500 py-1 rounded-lg text-white">
+          <div className="relative">
+            <button
+              onClick={() => setOpen(true)}
+              className="flex  items-center px-3 bg-indigo-500 py-1 rounded-lg text-white"
+            >
               Resume
               <Download className="sm:p-1 inline-block" />
             </button>
@@ -92,6 +97,12 @@ export default function Navbar() {
           </ul>
         </div> */}
       </nav>
+      <CertificateView
+        image={"mohammadasif_resume.pdf"}
+        key={"resume"}
+        isOpen={open}
+        onClose={() => setOpen(false)}
+      />
     </>
   );
 }

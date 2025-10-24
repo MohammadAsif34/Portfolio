@@ -277,7 +277,7 @@ export const socialLink = [
     id: 127,
     icon: <Code2 />,
     title: "leetcode",
-    link: "https://leetcode.com/your-username/",
+    link: "https://leetcode.com/u/MohammadAsif34_dev/",
   },
 ];
 export const education = [

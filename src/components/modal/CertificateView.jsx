@@ -50,7 +50,6 @@ const CertificateView = ({ isOpen, onClose, image, verifyLink }) => {
                 <span className="text-3xl font-thin leading-2 tracking-[10px] text-gray-500 ">
                   Loading
                 </span>
-                is
                 <span className="inline-block w-5 h-5 border-2 border-t-transparent rounded-full animate-spin "></span>
               </div>
             </div>
@@ -81,7 +80,7 @@ const CertificateView = ({ isOpen, onClose, image, verifyLink }) => {
         {/* Action Buttons */}
         <div className="flex justify-between flex-wrap gap-3 mt-6">
           <div className="flex gap-4">
-            <button
+            {/* <button
               onClick={handleZoomIn}
               className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-md font-semibold transition-all"
             >
@@ -93,7 +92,7 @@ const CertificateView = ({ isOpen, onClose, image, verifyLink }) => {
               className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-md font-semibold transition-all"
             >
               <ZoomOut className="w-4 h-4" /> Zoom Out
-            </button>
+            </button> */}
           </div>
           <div className="flex gap-4">
             <button
