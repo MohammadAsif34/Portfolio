@@ -132,7 +132,7 @@ export const projects = [
     title: "Whiteboard",
     desc: "Real-time collaborative drawing board for teams and classrooms.",
     tech: "React, Canvas API, Socket.io",
-    link: "https://your-live-demo-url.com",
+    link: "https://whiteboard-mohammadasif34.vercel.app/",
     github: "https://github.com/mohammadasif34/whiteboard",
   },
   {
