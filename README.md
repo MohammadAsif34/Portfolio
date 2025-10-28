@@ -27,7 +27,7 @@ with smooth scrolling, subtle animations, and responsive layouts for all devices
 ---
 
 ## 📁 Folder Structure
-
+```
 portfolio/
 │
 ├── public/                   # Static assets like favicon, images, etc.
@@ -59,6 +59,7 @@ portfolio/
 ├── package.json
 ├── tailwind.config.js
 └── README.md
+```
 
 ---
 
