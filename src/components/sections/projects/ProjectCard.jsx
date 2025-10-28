@@ -12,7 +12,7 @@ const ProjectCard = ({ project }) => {
             className="w-full h-40 object-cover"
           />
           <a
-            href={"https://www.elgoog.com"}
+            href={project.link}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden absolute top-2 right-2 p-2 text-sm font-medium text-white bg-indigo-500 rounded-xl hover:bg-indigo-700 transition group-hover:block cursor-pointer"
@@ -31,20 +31,14 @@ const ProjectCard = ({ project }) => {
             {project?.desc}
           </p>
 
-          {/* <a
-            // href={link}
+          <a
             target="_blank"
             rel="noopener noreferrer"
+            href={project.github}
             className="inline-block px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition"
           >
             Details
-          </a> */}
-          <button
-            onClick={() => alert("Something error : may be link broken")}
-            className="inline-block px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition"
-          >
-            Details
-          </button>
+          </a>
         </div>
       </div>
     </>

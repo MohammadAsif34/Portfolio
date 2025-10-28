@@ -109,12 +109,12 @@ const CertificateView = ({ isOpen, onClose, image, verifyLink }) => {
               <CheckCircle className="w-4 h-4" /> Verify
             </button>
 
-            <button
+            {/* <button
               onClick={handlePrint}
               className="flex items-center gap-2 bg-indigo-500 hover:bg-indigo-400 text-white px-4 py-2 rounded-md font-semibold transition-all"
             >
               <Printer className="w-4 h-4" /> Print
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
