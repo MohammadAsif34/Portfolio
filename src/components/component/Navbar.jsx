@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Code2, Download, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import CertificateView from "../modal/CertificateView";
-import { navlink } from "../../data/my_dataset";
+import { navlink, socialLink } from "../../data/my_dataset";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
@@ -84,7 +84,7 @@ export default function Navbar() {
             {menu && (
               <div
                 className={`absolute top-0 right-0 ${
-                  menu ? "w-[250px]" : "w-0"
+                  menu ? "w-[275px]" : "w-0"
                 } h-screen bg-gray-900 transition-transform duration-500`}
               >
                 <div className="p-2">
@@ -92,14 +92,14 @@ export default function Navbar() {
                     <X className="cursor-pointer" />
                   </button>
                 </div>
-                <div className="border w-full h- p-4">
-                  <ul className="flex flex-col gap-4  text-[#cfcfcf] text- md:text-sm md:gap-5 md:font-normal ">
+                <div className=" w-full h- p-6">
+                  <ul className="flex flex-col gap-6  text-[#cfcfcf] text- md:text-sm md:gap-5 md:font-normal ">
                     {navlink.map((it) => (
                       <motion.li key={it.to} whileHover={{ scale: 1.1 }}>
                         <a
                           href={it.to}
                           onClick={() => setMenu(false)}
-                          className="hover:text-purple-400 transition-all duration-500"
+                          className="hover:text-purple-400 text-lg px-4 transition-all duration-500"
                         >
                           {it.label}
                         </a>
@@ -107,6 +107,40 @@ export default function Navbar() {
                     ))}
                     {/* <Button title="Download CV" className="py-1!" /> */}
                   </ul>
+                  <div className="py-6">
+                    <button
+                      onClick={() => setOpen(true)}
+                      className=" flex items-center px-4 bg-indigo-500 py-1 rounded cursor-pointer hover:scale-105 transition duration-300 ease-in-out text-white"
+                    >
+                      Resume
+                      {/* <Download className="sm:p-1 inline-block" /> */}
+                    </button>
+                  </div>
+                  {/* Social Links */}
+                  <div className=" flex md:block flex-col items-center mt-6">
+                    <h3 className="text-2xl font-bold text-white mb-3">
+                      Follow Us
+                    </h3>
+                    <div className="flex space-x-4">
+                      <div className=" py-4 flex gap-x-5">
+                        {socialLink?.map((social, idx) => (
+                          <a
+                            target="_blank"
+                            href={social.link}
+                            key={social.id || idx}
+                            className=" cursor-pointer hover:text-indigo-600"
+                            title={social.title}
+                          >
+                            {social?.icon}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>{" "}
+                  <p className="py-2 text-center text-sm text-gray-600">
+                    © {new Date().getFullYear()} Mohammad Asif <br />All rights
+                    reserved.
+                  </p>
                 </div>
               </div>
             )}

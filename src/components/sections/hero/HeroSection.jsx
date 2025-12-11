@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import CertificateView from "../../modal/CertificateView";
 // import { slowScroll } from "../utils/SlowScroll";
 
 const HeroSection = () => {
+    const [open, setOpen] = useState(null);
+  
   return (
     <>
       {/* {/* <div className=" border mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 flex"> */}
@@ -36,9 +39,12 @@ const HeroSection = () => {
               Get started
             </a>
             {/* <img src="/right.svg" alt="" /> */}
-            <a href="#" className="text-sm/6 font-semibold text-white">
+            <button onClick={()=>setOpen(true)} className="text-sm/6 font-semibold text-white">
               Explore Resume <span aria-hidden="true">→</span>
-            </a>
+            </button>
+            {/* <a href="#" className="text-sm/6 font-semibold text-white">
+              Explore Resume <span aria-hidden="true">→</span>
+            </a> */}
           </div>
         </div>
 
@@ -46,6 +52,12 @@ const HeroSection = () => {
         <BannerImg />
       </div>
       {/* </div> */}
+      <CertificateView
+        image={"mohammadasif_resume.pdf"}
+        key={"resume"}
+        isOpen={open}
+        onClose={() => setOpen(false)}
+      />
     </>
   );
 };
