@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+.mulish-1 {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Futuristic selection + scrollbar (optional) */
+/* ::selection {
+  background: #00f5d4;
+  color: #0a0f1c;
+} */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.scroll-none::-webkit-scrollbar {
+  display: none;
+}
+/* Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-purple-500/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-purple-500/70 transition-all duration-300 cursor-pointer scale-101;
+}
+
+/* Firefox */
+/* * { */
+/* scrollbar-width: thin; auto | thin | none */
+/* scrollbar-color: wheat transparent; thumb | track */
+/* } */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.25s ease-out;
+}
+
+.padding {
+  @apply px-4 md:px-14 lg:px-20  xl:px-[10%];
+}
