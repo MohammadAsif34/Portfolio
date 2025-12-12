@@ -1,7 +1,15 @@
 import { Award, ExternalLink, FolderGit } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
+import Documentations from "../../modal/Documentations";
 
-const ProjectCard = ({ project, setOpen }) => {
+const ProjectCard = ({ project }) => {
+  const [open, setOpen] = useState(false);
+  const [repo, setRepo] = useState(null);
+
+  const handleDetails = (repo) => {
+    setRepo(repo);
+    setOpen(true);
+  };
   return (
     <>
       <div className="bg-white dark:bg-gray-900 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-transform duration-300 hover:-translate-y-1 group">
@@ -37,13 +45,14 @@ const ProjectCard = ({ project, setOpen }) => {
             </a>
             <button
               className=" px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition cursor-pointers"
-              onClick={() => setOpen(true)}
+              onClick={() => handleDetails(project.github)}
             >
               Details
             </button>
           </div>
         </div>
       </div>
+      <Documentations isOpen={open} onClose={setOpen} repo={repo} />
       <div className="absolute top-0 left-0"></div>
     </>
   );

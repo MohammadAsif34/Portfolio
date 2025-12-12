@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/component/Navbar";
 import HomePage from "./pages/home-page/HomePage";
 import Footer from "./components/sections/footer/Footer";
+import ReadmeViewer from "./components/modal/ReadmeViewer";
 
 const App = () => {
   return (
@@ -13,6 +14,16 @@ const App = () => {
           <div className="h-16" />
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route
+              path="/asif"
+              element={
+                <ReadmeViewer
+                  owner="MohammadAsif34"
+                  repo="Portfolio"
+                  branch="main"
+                />
+              }
+            />
           </Routes>
           <Footer />
         </div>
