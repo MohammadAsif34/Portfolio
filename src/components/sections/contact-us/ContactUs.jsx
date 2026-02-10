@@ -7,7 +7,7 @@ const ContactUs = () => {
   return (
     <>
       <section id="contact" className="py-14 scroll-mt-10 ">
-        <div className="flex gap-5 max-md:flex-col  ">
+        <div className="flex gap-5 max-lg:flex-col  ">
           <ContactBanner />
           <ContactForm />
         </div>
@@ -22,9 +22,9 @@ const ContactBanner = () => {
     <>
       <section
         id="about"
-        className="relative flex-1  scroll-mt-20 bg-gradient-to-br rounded-2xl from-gray-900 via-gray-800 to-black text-white"
+        className="relative flex-1 scroll-mt-20 bg-gradient-to-br rounded-xl from-gray-900 via-gray-800 to-black text-white"
       >
-        <div className="flex- f lex justify-center items-center">
+        <div className="">
           <img
             src="/img-2.png"
             className="w-80% h-f ull object-cover scale-x-[-1]"

@@ -13,15 +13,15 @@ const AboutUs = () => {
       <div className="container mx-auto px-6 lg:px-16">
         <SectionTitle title="About Me" />
 
-        <div className="grid md:grid-cols-2 gap-10 mt-12 items-center">
+        <div className=" grid lg:grid-cols-3 gap-10 mt-12 items-center ">
           {/* Image Section */}
-          <div className="flex justify-center">
-            <div className="relative group">
+          <div className="max-lg:translate-x-1/2 flex  items-center ">
+            <div className="mx-auto relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-500 rounded-full blur opacity-30 group-hover:opacity-70 transition duration-500"></div>
               <img
                 src="/p2.png"
                 alt="person"
-                className="relative w-72 aspect-square object-cover object-top rounded-full shadow-2xl border-4 border-gray-700 transition-transform duration-500 group-hover:scale-105"
+                className="relative min-w-24 w-72 aspect-square object-cover object-top rounded-full shadow-2xl border-4 border-gray-700 transition-transform duration-500 group-hover:scale-105"
                 decoding="async"
                 fetchPriority="high"
                 loading="eager"
@@ -30,10 +30,10 @@ const AboutUs = () => {
           </div>
 
           {/* Text Section */}
-          <div className="space-y-5 text-gray-300 leading-relaxed text-lg">
+          <div className="space-y-5 col-span-2 text-justify text-gray-300 leading-relaxed text-sm xl:text-lg">
             <p
               className={`transition-all duration-500 ease-in-out ${
-                expanded ? "line-clamp-none" : "line-clamp-5"
+                expanded ? "line-clamp-none" : "xl:line-clamp-5 line-clamp-6"
               }`}
             >
               {about}

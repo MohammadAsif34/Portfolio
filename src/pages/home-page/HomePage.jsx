@@ -11,7 +11,7 @@ import Footer from "../../components/sections/footer/Footer";
 const HomePage = () => {
   return (
     <>
-      <main className="mulish-1 relative  ">
+      <main className="mulish-1 relative  scroll-smooth">
         <div className="absolute  inset-0 bg-[url(./bg-main.svg)] bg-fixed bg-center opacity-15"></div>
         <HeroSection />
         <div className=" padding relative  scroll-mt-10 ">

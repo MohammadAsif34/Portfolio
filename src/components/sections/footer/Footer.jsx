@@ -6,102 +6,87 @@ import {
   Linkedin,
   Github,
   Mail,
+  MailIcon,
+  Phone,
+  MapPin,
+  MapPinned,
 } from "lucide-react";
-import { about, quickLink, socialLink } from "../../../data/my_dataset";
-import { Link } from "react-router-dom";
+import { quickLink, socialLink } from "../../../data/my_dataset";
 
 export default function Footer() {
-  const [seemore, setSeemore] = useState(false);
-
   return (
     <footer className=" bg-gray-900  ">
       <div className=" padding mx-auto  grid grid-cols-1 md:grid-cols-3 gap-4 py-10 transition-transform duration-300 ease-in-out ">
-        {/* Brand / About */}
-        <div className="px-2 md:px-6 sm:text-center md:text-balance transition-all duration-300 ease-in-out ">
-          <h2 className="text-xl md:text-3xl font-bold  text-white mb-3">
-            Mohammad Asif
+        {/* Contact Info */}
+        <div className="col-span-2 flex md :block flex-col justify-center items-center ">
+          <h2 className="text-xl md:text-3xl xl:text-4xl py-1 tracking-wider font-bold text-center my-6 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 via-indigo-500  to-purple-600 drop-shadow-lg">
+            Contact Information
           </h2>
-          <p
-            className={`text-sm text-start transition-all duration-300 ease-in-out  md:px-4  line-clamp-${
-              seemore ? " " : "6"
-            }`}
-          >
-            {about}
-          </p>
-          <button
-            className="underline float-end mt-2 text-indigo-500 cursor-pointer"
-            onClick={() => setSeemore((p) => !p)}
-          >
-            {seemore ? "see less" : "read more"}
-          </button>
+
+          <ul className="space-y-2 flex flex-col  text-gray-400">
+            <li className="py-2 text-lg text-center md:text-start text-white">
+              <MailIcon size={24} className="inline-block mr-6" />
+              <span className="block text-gray-600 md:inline">Email: </span>
+              <a
+                href="mailto:mohammadasif34.dev@gmail.com"
+                className="hover:text-white font-semibold"
+              >
+                mohammadasif34.dev@gmail.com
+              </a>
+            </li>
+
+            <li className="py-2 text-center md:text-start text-white">
+              <MapPinned size={24} className="inline-block mr-6" />
+              <span className="block text-gray-600 md:inline">Location:</span>
+              <span className="font-semibold">Kolkata, West Bengal, India</span>
+            </li>
+          </ul>
+
+          {/* Social Links */}
+          <div className=" flex md:block flex-col items-center mt-6">
+            <h2 className="text-xl md:text-3xl xl:text-4xl py-1 tracking-wider font-bold text-center my-6 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 via-indigo-500  to-purple-600 drop-shadow-lg">
+              Follow Us
+            </h2>
+            <div className=" flex gap-x-5 justify-center">
+              {socialLink?.map((social, idx) => (
+                <a
+                  target="_blank"
+                  href={social.link}
+                  key={social.id || idx}
+                  className=" cursor-pointer hover:text-indigo-600 p-2 hover:bg-gray-800 rounded-md"
+                  title={social.title}
+                >
+                  {social?.icon}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Quick Links */}
         <div className="flex flex-col items-center ">
-          <h3 className="text-2xl font-bold text-white mb-3">Quick Links</h3>
+          <h2 className="text-xl md:text-3xl xl:text-4xl py-1 tracking-wider font-bold text-center my-6 md:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 via-indigo-500  to-purple-600 drop-shadow-lg">
+            Quick Links
+          </h2>
           <div className="flex flex-col">
             {quickLink.map((quick, idx) => (
               <a
                 href={quick.to}
                 key={quick.id || idx}
                 title={quick.label}
-                className="my-0.5 py-1"
+                className="my-0.5 py-1 hover:text-indigo-500"
               >
                 {quick.label}
               </a>
             ))}
           </div>
         </div>
-
-        {/* Contact Info */}
-        <div className="flex md:block flex-col items-center ">
-          <h3 className="text-2xl font-bold text-white mb-3">Contact</h3>
-          <ul className="space-y-2 flex flex-col text-gray-400">
-            <li className=" text-center md:text-start">
-              <strong className="block text-white md:inline">Email: </strong>
-              <a
-                href="mailto:mohammadasif34.dev@gmail.com"
-                className="hover:text-white"
-              >
-                mohammadasif34.dev@gmail.com
-              </a>
-            </li>
-            <li className=" text-center md:text-start">
-              <strong className="block text-white md:inline">Phone: </strong>
-              <a href="tel:7250761747">+91 7250761747</a>
-            </li>
-            <li className=" text-center md:text-start">
-              <strong className="block text-white md:inline">Location: </strong>
-              Kolkata, India
-            </li>
-          </ul>
-
-          {/* Social Links */}
-          <div className=" flex md:block flex-col items-center mt-6">
-            <h3 className="text-2xl font-bold text-white mb-3">Follow Us</h3>
-            <div className="flex space-x-4">
-              <div className=" py-4 flex gap-x-5">
-                {socialLink?.map((social, idx) => (
-                  <a
-                    target="_blank"
-                    href={social.link}
-                    key={social.id || idx}
-                    className=" cursor-pointer hover:text-indigo-600"
-                    title={social.title}
-                  >
-                    {social?.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="padding py-4 bg-gray-950 border-t border-gray-700  text-center text-sm md:flex justify-between items-center">
+      <div className="padding py-3 text-gray-500 bg-gray-950 text-center text-sm md:flex justify-between items-center">
         <p className="py-2">
-          © {new Date().getFullYear()} Mohammad Asif — All rights reserved.
+          © {new Date().getFullYear()} | Mohammad Asif — All rights reserved.
         </p>
         <p className="py-2 text-indigo-500 font-bold italic">{`"Building Cool Thing with Code"`}</p>
         <p className="py-2">

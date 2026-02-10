@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import CertificateView from "../../modal/CertificateView";
-// import { slowScroll } from "../utils/SlowScroll";
 
 const HeroSection = () => {
-    const [open, setOpen] = useState(null);
-  
+  const [open, setOpen] = useState(null);
+
   return (
     <>
       {/* {/* <div className=" border mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 flex"> */}
-      <div className="  w-full h-[450px] md:h-[90vh] px-[8%] flex items-center max-md:flex-col ">
+      <div className="  w-full h-[400px] md:h-[625px] px-[8%] flex items-center max-md:flex-col ">
         {/* content  */}
-        <div className=" flex-1 px-10 max-md:px-2 pt-6 md:pt-20 max-sm:text-sm z-20  ">
+        <div className=" flex-1 px-10 max-md:px-2 pt-6 md:pt-14 max-sm:text-sm z-20  ">
           <h1 className="text-3xl font-thin tracking-widest leadi text-balance text-white sm:text-4xl">
             <span className="text-indigo-400">Hello</span>, I'm
             <p
@@ -22,7 +21,7 @@ const HeroSection = () => {
               Mohammad Asif Hasnain
             </p>
           </h1>
-          <p className=" py-4 uppercase font-normal text-2xl italic my-4 tracking-tight text-shadow-2xs [text-shadow:2px_2px_4px_#00f5d4]">
+          <p className=" py-4 uppercase font-normal text-2xl xl:text-2xl italic my-4 tracking-tight text-shadow-2xs [text-shadow:2px_2px_4px_#00f5d4]">
             “Building cool things with code”
           </p>
           <p className="md:text-xl pb-8">
@@ -39,7 +38,10 @@ const HeroSection = () => {
               Get started
             </a>
             {/* <img src="/right.svg" alt="" /> */}
-            <button onClick={()=>setOpen(true)} className="text-sm/6 font-semibold text-white">
+            <button
+              onClick={() => setOpen(true)}
+              className="text-sm/6 font-semibold text-white"
+            >
               Explore Resume <span aria-hidden="true">→</span>
             </button>
             {/* <a href="#" className="text-sm/6 font-semibold text-white">
@@ -49,7 +51,7 @@ const HeroSection = () => {
         </div>
 
         {/* image  */}
-        <BannerImg />
+        <BannerImg3 />
       </div>
       {/* </div> */}
       <CertificateView
@@ -96,5 +98,39 @@ const BannerImg = () => {
         </div>
       </div>
     </>
+  );
+};
+
+const BannerImg2 = () => {
+  return (
+    <div className="hidden lg:flex flex-1 h-full relative justify-center items-center">
+      <div className="relative z-10 w-[420px] h-[80%]">
+        <img
+          src="/person-1.png"
+          alt="person"
+          className="w-full h-full object-top object-cover rounded-xl "
+          loading="eager"
+        />
+      </div>
+    </div>
+  );
+};const BannerImg3 = () => {
+  return (
+    <div className="hidden lg:flex flex-1 h-full relative justify-center items-center">
+      <div className="group relative w-[420px] h-[80%] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+        {/* Glow Layer */}
+        <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-500 blur-2xl opacity-10 group-hover:opacity-20 transition duration-500"></div>
+
+        {/* Image Layer */}
+        <div className="relative z-10 w-full h-full">
+          <img
+            src="/p3.png"
+            alt="person"
+            className="w-full h-full object-cover object-top rounded-2xl"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
   );
 };

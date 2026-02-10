@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { X, CheckCircle, Printer, ZoomIn, ZoomOut } from "lucide-react";
+import Button from "../component/Button";
 
 const CertificateView = ({ isOpen, onClose, image, verifyLink }) => {
   const [zoom, setZoom] = useState(1);
@@ -19,7 +20,7 @@ const CertificateView = ({ isOpen, onClose, image, verifyLink }) => {
     } else {
       // For images inside src or public
       setFilePath(
-        image.startsWith("/") ? image : `/data/certificates/${image}`
+        image.startsWith("/") ? image : `/data/certificates/${image}`,
       );
     }
   }, [image]);
@@ -36,16 +37,16 @@ const CertificateView = ({ isOpen, onClose, image, verifyLink }) => {
     else alert("Verification link not available.");
   };
 
-  const handleZoomIn = () => setZoom((z) => Math.min(z + 0.25, 3));
-  const handleZoomOut = () => setZoom((z) => Math.max(z - 0.25, 0.5));
+  // const handleZoomIn = () => setZoom((z) => Math.min(z + 0.25, 3));
+  // const handleZoomOut = () => setZoom((z) => Math.max(z - 0.25, 0.5));
 
   return (
     <div className="fixed inset-0 dark:bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
-      <div className="dark: bg-gray-900 b g-white p-4 rounded-2xl shadow-2xl max-w-5xl w-[95%] relative">
+      <div className="dark: b g-gray-900 b g-white p -4 rounded-2xl shadow-2xl max-w-5xl w-[95%] relative">
         {/* Certificate Viewer */}
         <div className="flex justify-center items-center overflow-hidden rounded-lg border border-gray-700">
           {!filePath ? (
-            <div className="min-h-[80vh] flex justify-center items-center">
+            <div className="min-h-[85vh] flex justify-center items-center">
               <div className="flex items-center gap-2">
                 <span className="text-3xl font-thin leading-2 tracking-[10px] text-gray-500 ">
                   Loading
@@ -57,7 +58,7 @@ const CertificateView = ({ isOpen, onClose, image, verifyLink }) => {
             <iframe
               src={filePath}
               title="Certificate PDF"
-              className="w-full h-[80vh] rounded-lg border-none"
+              className="w-full h-[85vh] rounded-none! -lg border-none"
               style={{
                 transform: `scale(${zoom})`,
                 transformOrigin: "center center",
@@ -95,19 +96,14 @@ const CertificateView = ({ isOpen, onClose, image, verifyLink }) => {
             </button> */}
           </div>
           <div className="flex gap-4">
-            <button
-              onClick={onClose}
-              className="flex items-center gap-2 border border-gray-600 hover:bg-gray-800 text-white px-4 py-2 rounded-md font-semibold transition-all"
-            >
-              Close
-            </button>
+            <Button title={"Close"} onclick={onClose} className={"-mt-4"} />
 
-            <button
+            {/* <button
               onClick={handleVerify}
               className="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white px-4 py-2 rounded-md font-semibold transition-all"
             >
               <CheckCircle className="w-4 h-4" /> Verify
-            </button>
+            </button> */}
 
             {/* <button
               onClick={handlePrint}

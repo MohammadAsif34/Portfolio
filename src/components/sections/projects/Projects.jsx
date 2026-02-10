@@ -15,7 +15,7 @@ import ProjectCard from "./ProjectCard";
 import Documentations from "../../modal/Documentations";
 
 const Projects = () => {
-  const [size, setSize] = useState(8);
+  const [size, setSize] = useState(4);
 
   const handlemore = () => {
     if (size < projects.length) setSize((p) => p + 4);
@@ -27,9 +27,9 @@ const Projects = () => {
       <section id="projects" className="py-14 scroll-mt-10">
         <div className=" scroll-mt-10 relative">
           <SectionTitle title={"Projects"} />
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  flex-wrap  gap-x-4 gap-y-10 ">
+          <div className="grid grid-cols-1 s m:grid-cols-2 m d:grid-cols-3 l g:grid-cols-4  flex-wrap  gap-x-4 gap-y-10 ">
             {projects.slice(0, size).map((project, idx) => (
-              <ProjectCard project={project} key={idx} />
+              <ProjectCard project={project} key={idx} idx={idx} />
             ))}
           </div>
           <div className="py-10 text-center">

@@ -9,13 +9,13 @@ const ExperienceCard = ({ title, icon, company, date, description, list }) => {
           {icon}
         </div>
         <div>
-          <h3 className="text-xl font-semibold t ext-gray-800 dark: t ext-gray-100">
+          <h3 className="max-md:text-sm text-xl font-semibold  ">
             {title}
           </h3>
           <p className="text-sm text-gray-500 dark:t ext-gray-400 mb-1">
             {company} • {date}
           </p>
-          <p className="text-gray-400 dark:t ext-gray-300 text-sm leading-relaxed">
+          <p className=" max-md:-translate-x-14 mt-4 text-gray-400 dark:t ext-gray-300 text-sm leading-relaxed">
             {description}
           </p>
           {list && (
